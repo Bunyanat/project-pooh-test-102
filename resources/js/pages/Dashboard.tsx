@@ -162,6 +162,9 @@ export default function Dashboard() {
 
                                             {/* ✅ แสดงรายละเอียด ถ้าไม่มีให้ใช้ค่าเริ่มต้น */}
                                             <p className="text-gray-500 text-sm">{transaction.description ? transaction.description : "ไม่มีรายละเอียด"}</p>
+                                            <p className="text-gray-400 text-xs">
+                                            🕒 {transaction.created_at ? new Date(transaction.created_at).toLocaleTimeString("th-TH", { hour: "2-digit", minute: "2-digit" }) : "ไม่ระบุเวลา"}
+                                        </p> {/* ✅ เพิ่มเวลา */}
                                         </div>
                                     </div>
 

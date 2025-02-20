@@ -109,9 +109,8 @@ const AddTransaction = () => {
         <div className="min-h-screen bg-amber-50">
             {/* 🔹 Navbar ด้านบน */}
             <div className="bg-amber-400 text-white p-4 flex justify-between items-center shadow-md">
-                <button onClick={() => history.back()} className="text-xl">❌</button>
+                <button onClick={() => history.back()} className="text-xl">↩️</button>
                 <h2 className="text-lg font-semibold">{transactionType === "expense" ? "เพิ่มรายจ่าย" : "เพิ่มรายรับ"}</h2>
-                <button onClick={handleSubmit} className="text-xl">✔️</button>
             </div>
 
             {/* 🔹 ปุ่มเลือก รายจ่าย/รายรับ */}
@@ -157,7 +156,7 @@ const AddTransaction = () => {
             <div className="bg-white p-4 rounded-lg shadow-lg mx-4 mt-4">
                 <h3 className="text-lg font-semibold text-gray-700 mb-2">รายละเอียดธุรกรรม</h3>
                 <div className="grid grid-cols-2 gap-4">
-                    <input type="text" value={amount} readOnly className="w-full p-4 text-3xl text-center bg-amber-100 rounded-lg" placeholder="฿0.00" />
+                    <input type="text" value={amount} onChange={(e) => setAmount(e.target.value)} className="w-full p-4 text-3xl text-center bg-amber-100 rounded-lg" placeholder="฿0.00" />
                     <input type="text" value={note} onChange={(e) => setNote(e.target.value)} className="w-full p-4 text-lg bg-amber-100 rounded-lg" placeholder="รายละเอียดเพิ่มเติม..." />
                 </div>
             </div>
